@@ -59,7 +59,7 @@ Detailed request/response examples are in [API_CONTRACT.md](./API_CONTRACT.md).
 - Frontend is component-driven with a custom hook (`useActionCenter`) for fetching and status updates.
 - Types are defined in both frontend and backend for safer API integration.
 
-## Bonus Task 2 (Quality and Reliability)
+##  Task 2 (Quality and Reliability)
 
 ### Backend improvements
 - Added request ID middleware (`X-Request-ID` header on every response).
@@ -95,10 +95,14 @@ npm run test
 # Frontend
 cd frontend
 npm run test
+
+# Frontend (Vitest UI for screenshot)
+cd frontend
+npx vitest --ui
 ```
 
 ### Test evidence
 - Use terminal output from:
   - `backend: npm run test`
   - `frontend: npm run test`
-- Include screenshot(s) of passing tests in your submission/PR notes (or CI run logs if CI is enabled).
+- For frontend UI evidence, run `npx vitest --ui` and take a screenshot from the Vitest UI page.
