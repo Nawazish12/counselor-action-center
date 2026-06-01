@@ -33,6 +33,14 @@ Errors:
 - `404` student not found
 - `500` internal server error
 
+Error response shape:
+```json
+{
+  "error": "Student not found",
+  "requestId": "uuid-value"
+}
+```
+
 ### 2) PATCH `/tasks/:taskId/status`
 Updates a task status.
 
@@ -70,9 +78,19 @@ Errors:
 - `404` task not found
 - `500` internal server error
 
+Error response shape:
+```json
+{
+  "error": "Invalid status value provided",
+  "requestId": "uuid-value"
+}
+```
+
 ## Notes
 - Data source is in-memory mock data in `backend/src/data/mockData.ts`.
 - Endpoint definitions are in `backend/src/routes/api.ts`.
+- Every response includes `X-Request-ID` header.
+- Backend request logs include request ID, method, URL, status, and response time.
 
 ## Folder Structure
 
@@ -82,6 +100,7 @@ frontend/
   src/
     components/         # UI building blocks (profile, tasks, messages, states)
     hooks/              # Data/state hooks (useActionCenter)
+    tests/              # Frontend tests + Vitest setup
     constants/          # Reusable static config (dropdown options, card configs)
     types/              # Frontend TypeScript models/interfaces
     utils/              # UI/helper functions (formatting, color/status helpers)
@@ -89,7 +108,8 @@ frontend/
     App.tsx             # Root app component
     main.tsx            # React entry point
     index.css           # Global styles and Tailwind layers
-  vite.config.ts        # Vite config + /api proxy to backend
+  vite.config.ts        # Vite config (frontend dev server)
+  vitest.config.ts      # Frontend test config
   tailwind.config.js    # Tailwind theme tokens/config
 ```
 
@@ -99,6 +119,8 @@ backend/
   src/
     data/
       mockData.ts       # Assignment mock data (students, tasks, messages)
+    middleware/         # Request ID, logging, and error middlewares
+    tests/              # Backend integration tests
     types/
       index.ts          # Backend request/response/domain types
     services/
@@ -108,4 +130,5 @@ backend/
     routes/
       api.ts            # API route definitions
     server.ts           # Express app/bootstrap and middleware
+  vitest.config.ts      # Backend test config
 ```
