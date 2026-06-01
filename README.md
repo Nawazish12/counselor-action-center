@@ -49,9 +49,3 @@ Detailed request/response examples are in [API_CONTRACT.md](./API_CONTRACT.md).
 - Backend uses a simple route -> controller -> service structure with in-memory mock data.
 - Frontend is component-driven with a custom hook (`useActionCenter`) for fetching and status updates.
 - Types are defined in both frontend and backend for safer API integration.
-
-## Assignment checklist
-- React + TypeScript + Vite frontend: Yes
-- Node + Express + TypeScript backend: Yes
-- Required endpoints: Yes
-- Uses provided mock data structure/IDs: Yes
