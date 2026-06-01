@@ -61,11 +61,8 @@ export default function ActionCenter() {
                       Unable to refresh latest data: {error}
                     </div>
                   )}
-
                   <StudentProfile student={data.student} />
-
                   <UrgencyMetrics summary={data.summary} tasks={data.tasks} />
-
                   <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
                     <div className="xl:col-span-2">
                       <TaskList
