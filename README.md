@@ -106,3 +106,9 @@ npx vitest --ui
   - `backend: npm run test`
   - `frontend: npm run test`
 - For frontend UI evidence, run `npx vitest --ui` and take a screenshot from the Vitest UI page.
+
+Backend test run:
+![Backend tests](docs/screenshots/backend-tests.png)
+
+Frontend Vitest UI:
+![Frontend tests](docs/screenshots/frontend-vitest-ui.png)
