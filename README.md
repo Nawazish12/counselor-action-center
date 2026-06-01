@@ -19,25 +19,34 @@ counselor-action-center/
   API_CONTRACT.md
 ```
 
-## Run locally
+## Run locally (easy steps)
 
-### 1) Backend
+Before you start:
+- Install Node.js (LTS version is recommended)
+- Open this project folder in your terminal
+
+### Backend (server)
+1. Open Terminal window #1
+2. Run:
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-Backend runs on `http://localhost:8000`.
+3. Keep this terminal open
+4. Backend will run at `http://localhost:8000`
 
-### 2) Frontend
+### Frontend (website)
+1. Open Terminal window #2
+2. Run:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Frontend runs on `http://localhost:5173`.
-By default it calls backend API at `http://localhost:8000/api`.
-Optional: set `VITE_API_BASE_URL` in frontend env if you want a different API URL.
+3. Open `http://localhost:5173` in your browser
+
+The frontend automatically calls backend APIs at `http://localhost:8000/api`.
 
 ## API endpoints
 - `GET /api/students/:id/action-center`
