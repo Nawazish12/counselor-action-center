@@ -7,6 +7,8 @@ import { TaskList } from "../components/TaskList";
 import { MessageSummary } from "../components/MessageSummary";
 import { LoadingState } from "../components/LoadingState";
 import { ErrorState } from "../components/ErrorState";
+import { ActionCenterHeader } from "../components/ActionCenterHeader";
+import { ActionCenterFooter } from "../components/ActionCenterFooter";
 import { STUDENTS } from "../constants";
 import type { TaskStatus } from "../types";
 
@@ -23,19 +25,7 @@ export default function ActionCenter() {
   return (
     <>
     <div className="flex min-h-screen flex-col bg-slate-100">
-      <header className="bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-12 text-white shadow-lg sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-2 flex items-center gap-3">
-            <span className="text-4xl">🎓</span>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Counselor Action Center
-            </h1>
-          </div>
-          <p className="text-lg text-purple-100">
-            Unified view of student priorities, tasks, and communication
-          </p>
-        </div>
-      </header>
+      <ActionCenterHeader />
 
       <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -82,12 +72,7 @@ export default function ActionCenter() {
         </div>
       </main>
 
-      <footer className="border-t border-slate-300 bg-slate-900 px-4 py-6 text-center text-sm text-slate-400">
-        <p>
-          © 2026 Counselor Action Center 
-          Express
-        </p>
-      </footer>
+      <ActionCenterFooter />
     </div>
     </>
   );
